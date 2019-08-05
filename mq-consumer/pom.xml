@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>shenzk</artifactId>
+        <groupId>com.activemq</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>mq-consumer</artifactId>
+
+    <properties>
+        <mq-service-api.version>1.0-SNAPSHOT</mq-service-api.version>
+        <mq-service.version>1.0-SNAPSHOT</mq-service.version>
+        <mq-model.version>1.0-SNAPSHOT</mq-model.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.activemq</groupId>
+            <artifactId>mq-service-api</artifactId>
+            <version>${mq-service-api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.activemq</groupId>
+            <artifactId>mq-service</artifactId>
+            <version>${mq-service.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.activemq</groupId>
+            <artifactId>mq-model</artifactId>
+            <version>${mq-model.version}</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

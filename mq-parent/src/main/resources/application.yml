@@ -1,0 +1,16 @@
+server:
+  port: 80
+spring:
+  message:
+    basename: i18n/Messages,i18n/Pages
+  jms:
+    pub-sub-domain: false   # 配置消息的类型，true：topic消息，false：queue消息
+  activemq:
+    user: shenzk
+    password: shenzk
+    broker-url: tcp://127.0.0.1:61616
+
+
+mq:
+  queue: shenzk.queue
+  topic: shenzk.topic
