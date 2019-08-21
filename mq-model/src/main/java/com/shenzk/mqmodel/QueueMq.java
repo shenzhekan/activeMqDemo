@@ -20,6 +20,9 @@ public class QueueMq {
     @Value("${mq.topic}")
     private String topic;
 
+    @Value("${mq.objQueue}")
+    private String objQueue;
+
     @Bean("queue")
     public Queue queue(){
         return new ActiveMQQueue(queue);
@@ -28,5 +31,10 @@ public class QueueMq {
     @Bean("topic")
     public Topic topic(){
         return new ActiveMQTopic(topic);
+    }
+
+    @Bean("objQueue")
+    public Queue objQueue(){
+        return new ActiveMQQueue(objQueue);
     }
 }

@@ -1,5 +1,6 @@
 package com.shenzk.service.impl;
 
+import com.shenzk.model.Student;
 import com.shenzk.service.MessageProducerService;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.springframework.jms.core.JmsMessagingTemplate;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.jms.*;
+import java.io.Serializable;
 
 @Service
 public class MessageProducerServiceImpl implements MessageProducerService {
@@ -20,6 +22,9 @@ public class MessageProducerServiceImpl implements MessageProducerService {
 
     @Resource(name="topic")
     Topic topic;
+
+    @Resource(name="objQueue")
+    Queue objQueue;
 
 
     @Override
@@ -45,8 +50,12 @@ public class MessageProducerServiceImpl implements MessageProducerService {
         jmsMessagingTemplate.convertAndSend(topic, message);
     }
 
+    /**
+     * 传输对象
+     * @param student
+     */
     @Override
-    public void sendObjectMessage(Object object) {
-        jmsMessagingTemplate.convertAndSend(queue, object);
+    public void sendObjectMessage(Student student) {
+        jmsMessagingTemplate.convertAndSend(objQueue, (Serializable)student);
     }
 }

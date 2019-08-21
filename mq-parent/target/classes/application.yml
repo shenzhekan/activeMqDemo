@@ -9,8 +9,10 @@ spring:
     user: shenzk
     password: shenzk
     broker-url: tcp://127.0.0.1:61616
-
+    packages:
+      trust-all: true   # 当需要传输对象的时候必须开启，不然报错
 
 mq:
   queue: shenzk.queue
   topic: shenzk.topic
+  objQueue: shenzk.objQueue
