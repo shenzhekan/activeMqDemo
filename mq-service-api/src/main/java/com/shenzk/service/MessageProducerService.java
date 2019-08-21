@@ -9,4 +9,6 @@ public interface MessageProducerService {
     public void sendQueueMessage(String message);
 
     public void sendTopicMessage(String message);
+
+    public void sendObjectMessage(Object object);
 }

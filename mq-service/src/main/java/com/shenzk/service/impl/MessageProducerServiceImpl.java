@@ -44,4 +44,9 @@ public class MessageProducerServiceImpl implements MessageProducerService {
     public void sendTopicMessage(String message){
         jmsMessagingTemplate.convertAndSend(topic, message);
     }
+
+    @Override
+    public void sendObjectMessage(Object object) {
+        jmsMessagingTemplate.convertAndSend(queue, object);
+    }
 }
